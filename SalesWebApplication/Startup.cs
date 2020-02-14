@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using SalesWebApplication.Data;
+using SalesWebApplication.Services;
 
 namespace SalesWebApplication
 {
@@ -39,6 +40,7 @@ namespace SalesWebApplication
                     options.UseSqlServer(Configuration.GetConnectionString("SalesWebApplicationContext")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
